@@ -1,0 +1,15 @@
+AddDefaultCharset UTF-8
+
+Options -Multiviews
+Options +Indexes
+Options +FollowSymLinks
+
+RewriteEngine On
+ReWriteBase /
+
+RewriteRule ^about/?$ about.php [L]
+RewriteRule ^support/?$ https://needforskinscom.freshdesk.com/support/tickets/new [R=301,L]
+RewriteCond %{HTTP_HOST} ^needforskin\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.needforskin\.com$
+RewriteRule ^/?$ "http\:\/\/needforskins\.com\/\?rr" [R=301,L]
+
