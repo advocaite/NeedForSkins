@@ -20,16 +20,6 @@ foreach($ccs as $ccid=>$cc){
 		echo'</td>';
 		echo'</tr></table>';
 	}else{
-		/*if($cc['title']=='TacoKey'){
-			echo'<table><tr>';
-			echo'<td>';
-			echo'<img src="https://i.ytimg.com/vi_webp/VtvHw-R1syY/mqdefault.webp" alt="" style="height:36px;width:64px;background-color:black;"/>';
-			echo'</td><td>';
-			echo'<a href="'.$cc['url'].'" target="_blank" title="'.$cc['desc'].'"><img src="'.$cc['icon'].'" alt="" class="cc"/> '.$cc['title'].'</a>';
-			echo'&nbsp;<small><b style="color:red;">NEW</b></small><br/><small>[GER] Cyrex Giveaway</small>';
-			echo'</td>';
-			echo'</tr></table>';
-		}else*/
 			$collect.=$basetemplate.'<br/>';
 	}
 }
@@ -37,19 +27,3 @@ echo $collect;
 
 echo'<br/><br/><div style="float:right;text-align:right;"><a href="partners.php" target="_blank"><small>GET FEATURED</small></a></div>';
 exit;
-/*
-$channels = array('summit1g','Ellohime','MarkeeDragon') ;
-$callAPI = implode(",",$channels);
-foreach($dataArray['streams'] as $mydata){
-	if($mydata['_id'] != null){
-		$name 		= $mydata['channel']['display_name'];
-		$game		= $mydata['channel']['game'];
-		$url		= $mydata['channel']['url'];		
-
-		echo "<a href=\"$url\">" . $name ."</a>";
-
-
-	}
-}
-var_dump($dataArray);
-*/
