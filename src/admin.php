@@ -1,7 +1,7 @@
 <?php
 $admins=array(
-        '76561198065442521',
-        '76561198042996771',
+        '',
+        '',
     );
 
 $secured=true;
@@ -37,8 +37,8 @@ if(isset($_GET['sendcomission'])){
         $userid='';
         $token='';
     }else{
-        $userid='76561198065442521';
-        $token='joarhT3x';
+        $userid='';
+        $token='';
     }
     $allitems=$mysql->query('SELECT * FROM `houseitems` WHERE `ininventory`="1"');
     $string='';
@@ -186,13 +186,6 @@ testElement.onmouseout = function(){
 
                     if(!isset($ccs[$winnerinfo['userid']])){
 
-                       /* if($chance>85 && preg_match('#'.$site['sitenameinusername'].'#i',$winnerinfo['name'])){ //dont take comission when winner had 85% chance or more
-
-                            $com=0;
-                            $comvalue=0;
-
-                        }else{ */
-
                             if(preg_match('#'.$site['sitenameinusername'].'#i',$winnerinfo['name'])){  //comission. 5% if has sitename in username, 10% if not
                                 $com=5;
                             }else{
@@ -250,11 +243,6 @@ testElement.onmouseout = function(){
                 echo'<tr><td colspan="3"><br/><br/><br/><b>Round ID #'.$round['id'].' EMPTY ROUND</b></td></tr>';
             }
                 echo'<tr><td colspan="3"><hr/></td></tr>';
-/*
-            $mysql->query('DROP TABLE IF EXISTS `needfoors_kins`.`game'.$round['id'].'`');
-            echo'DROP TABLE IF EXISTS `needfoors_kins`.`game'.$round['id'].'`;<br/>';
-            $mysql->query('DELETE FROM `games` WHERE `id`='.$round['id'].'');
-*/
         }
         echo'</table>';
 
