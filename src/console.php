@@ -15,7 +15,6 @@ $log=ob_get_clean();
 
 $boom=explode(PHP_EOL,$log);
 
-//$boom=array_reverse($boom);
 
 $revcount=count($boom);
 
