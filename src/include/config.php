@@ -1,15 +1,6 @@
 <?php
 if(!isset($secured)){ die('Not authorized.'); }
 
-//** LANGUAGE **//
-/*$lang=array('en','ro');
-if(isset($_COOKIE['lang']) && !empty($_COOKIE['lang']) && in_array($_COOKIE['lang'],$lang)){
-	$langpath=$_COOKIE['lang'];
-}else{
-	$langpath='en';
-}
-require 'include/lang/'.$langpath.'.php';*/
-
 $accesspassword='anythingyoudonthavetorememberthisshit'; //set this up in bot_source as well, for accessing /cost.php, /endgame.php
 
 //** DATABASE **//
@@ -46,38 +37,27 @@ $prf=$site['gamedbprefix'];
 
 
 $ccs=array( //content creators
-	'76561198161637443'=>array( //twitch template
-		'type'=> 'twitch',
-		'tname'=> 'IndependentM',
+	''=>array( //twitch template
+		'type'=> '',
+		'tname'=> '',
 
 		//
-		'title'=> 'IndependentM',
-		'desc'=>  'Latvian Pro Player',
+		'title'=> '',
+		'desc'=>  '',
 
 		//for play sidebar
-		'url'=> 'http://twitch.tv/IndependentM',
+		'url'=> '',
 		'icon'=> 'http://i.imgur.com/xup9Jyr.png',
 	),
 
-	'76561198054263565'=>array(
+	''=>array( //yt template
 		'type'=> 'youtube',
 
-		'title'=> 'Mastersaint',
-		'desc'=>  'CS:GO Content',
+		'title'=> '',
+		'desc'=>  '',
 
 		//for play sidebar
-		'url'=> 'https://www.youtube.com/user/mastersaint11',
-		'icon'=> 'http://i.imgur.com/tKEcY5C.png',
-	),
-
-	'76561198163857007'=>array( //yt template
-		'type'=> 'youtube',
-
-		'title'=> 'TacoKey',
-		'desc'=>  'German Gaming Channel',
-
-		//for play sidebar
-		'url'=> 'https://www.youtube.com/channel/UC3sL8P2TDh0FusEwY5xxRnw/',
+		'url'=> '/',
 		'icon'=> 'http://i.imgur.com/tKEcY5C.png',
 	),
 	
@@ -87,7 +67,7 @@ $ccs=array( //content creators
 //dev
 $allowips=array( //if you only want to allow certain ips to access the site (kinda like a developer mode), uncomment the line under this
 	'127.0.0.1', //server
-	'215.241.251.244', //ads
+	'', //ads
 
 	);
 if(!in_array($_SERVER['REMOTE_ADDR'], $allowips)){
