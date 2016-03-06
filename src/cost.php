@@ -30,8 +30,6 @@ if(!$string){
 $json = $string;
  
 $obj = json_decode($json);
-//print $obj->{"median_price"}; // 12345
-//$obj = json_decode($string);
 if($obj->{'success'} == "0") exit("notfound");
 
 $median_price = $obj->{'median_price'};
