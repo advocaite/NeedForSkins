@@ -14,23 +14,6 @@ if($mysql->connect_errno)
 	die('Database connection could not be established. Error number: '.$mysql->connect_errno);
 }
 
-
-//** CHECK IF PLAYER HAS INFO SET UP IN DB AND INSERT IT IF NOT **//
-/*
-        $steamprofile['steamid'] = $_SESSION['steam_steamid'];
-        $steamprofile['communityvisibilitystate'] = $_SESSION['steam_communityvisibilitystate'];
-        $steamprofile['profilestate'] = $_SESSION['steam_profilestate'];
-        $steamprofile['personaname'] = $_SESSION['steam_personaname'];
-        $steamprofile['lastlogoff'] = $_SESSION['steam_lastlogoff'];
-        $steamprofile['profileurl'] = $_SESSION['steam_profileurl'];
-        $steamprofile['avatar'] = $_SESSION['steam_avatar'];
-        $steamprofile['avatarmedium'] = $_SESSION['steam_avatarmedium'];
-        $steamprofile['avatarfull'] = $_SESSION['steam_avatarfull'];
-        $steamprofile['personastate'] = $_SESSION['steam_personastate'];
-        $steamprofile['realname'] = $_SESSION['steam_realname'];
-        $steamprofile['primaryclanid'] = $_SESSION['steam_primaryclanid'];
-        $steamprofile['timecreated'] = $_SESSION['steam_timecreated'];
-*/
 if(isset($_SESSION['steamid']) && !empty($_SESSION['steamid']))
 {
 	/**/
@@ -198,7 +181,6 @@ require_once 'include/headerb.php';
 	<div class="not-essential" style="position:absolute;bottom:0;width:97%">
 	 <div class="title">LAST ROUND WINNER</div>
 	 		<?php
-	 			//$lastgame=$currentgame-1;
 	 			if($lastgameinfo=$mysql->query('SELECT * FROM `games` WHERE `id`<"'.$currentgame.'" AND `totalvalue`>0 ORDER BY `id` DESC LIMIT 1')->fetch_assoc()):
 	 				$lastgame=$lastgameinfo['id'];
 
@@ -249,16 +231,6 @@ require_once 'include/headerb.php';
 
 
 	<div id="chat">
-	<!--
-	<div class="not-essential">
-	 <div class="title">SOCIAL &amp; PROMOTED CONTENT</div>
-	 	<div class="social">
-	 		<a href="#" title="Join our Steam group!" target="_blank"><img src="static/img/social/steam-64.png" class="steam" alt=""/></a><a href="#" title="Like our facebook page!" target="_blank"><img src="static/img/social/facebook-64.png" class="facebook" alt=""/></a><a href="#" title="Follow our twitter!" target="_blank"><img src="static/img/social/twitter-64.png" class="twitter" alt=""/></a>
-	 	</div>
-	 <br/>
-	</div>
-	-->
-	<!--<iframe src="https://mixlr.com/users/4208060/embed" width="100%" height="150px" scrolling="no" frameborder="no" marginheight="0" marginwidth="0"></iframe><br/><br/>-->
 	<table style="text-align:center;width:100%;background-color:#fff;margin-bottom:10px;border:1px solid #FFB913;">
 		<tr>
 			<td style="padding:10px;">
